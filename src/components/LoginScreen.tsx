@@ -4,7 +4,9 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
-import nbsLogo from 'figma:asset/69e1becade91f357255960f8b8328510f71655ad.png';
+// import nbsLogo from 'figma:asset/...'; ❌
+const nbsLogo = '/assets/logo2.png'; ✅
+
 
 interface LoginScreenProps {
   onLogin: (email: string, password: string) => void;
