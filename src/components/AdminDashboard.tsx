@@ -8,12 +8,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Textarea } from './ui/textarea';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { User, LogOut, Calendar, Scissors, DollarSign, Plus, Eye, Edit, Users, Bell, X, AlertTriangle, Check, Clock, UserCheck } from 'lucide-react';
 import { CommentsSection } from './CommentsSection';
 import { NotificationCenter } from './NotificationCenter';
-import nbsLogo from 'figma:asset/69e1becade91f357255960f8b8328510f71655ad.png';
 import type { AppUser, Service, Appointment, Payment, Notification, WorkerInfo } from '../types';
+
+// 👇 Reemplazo del logo
+const nbsLogo = "/assets/logo2.png";
+
 
 interface AdminDashboardProps {
   user: AppUser;
