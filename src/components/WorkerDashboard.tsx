@@ -7,8 +7,10 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { User, Bell, LogOut, Calendar, DollarSign, Clock, Eye, UserCheck, Phone, Mail } from 'lucide-react';
 import { CommentsSection } from './CommentsSection';
 import { NotificationCenter } from './NotificationCenter';
-import nbsLogo from 'figma:asset/69e1becade91f357255960f8b8328510f71655ad.png';
+
 import type { AppUser, Appointment, Notification } from '../App';
+const nbsLogo = "/assets/logo2.png";
+
 
 interface WorkerDashboardProps {
   user: AppUser;
