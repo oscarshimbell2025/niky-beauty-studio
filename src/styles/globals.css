@@ -1,0 +1,221 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* Paleta de colores rosados pastel y elegantes */
+  --background: #fef7f7;
+  --foreground: #2d1b1b;
+  --card: #ffffff;
+  --card-foreground: #2d1b1b;
+  --popover: #ffffff;
+  --popover-foreground: #2d1b1b;
+  
+  /* Rosa principal y variantes */
+  --primary: #e91e63;
+  --primary-foreground: #ffffff;
+  --primary-light: #f8bbd9;
+  --primary-pastel: #fce4ec;
+  
+  --secondary: #f8bbd9;
+  --secondary-foreground: #2d1b1b;
+  --muted: #fce4ec;
+  --muted-foreground: #8d5a5a;
+  --accent: #f3e5f5;
+  --accent-foreground: #2d1b1b;
+  --destructive: #d32f2f;
+  --destructive-foreground: #ffffff;
+  --border: rgba(233, 30, 99, 0.1);
+  --input: transparent;
+  --input-background: #fdf2f8;
+  --switch-background: #f8bbd9;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #e91e63;
+  
+  /* Colores de gráficos en tonos rosados */
+  --chart-1: #e91e63;
+  --chart-2: #f8bbd9;
+  --chart-3: #fce4ec;
+  --chart-4: #f3e5f5;
+  --chart-5: #e1bee7;
+  
+  --radius: 1rem;
+  --sidebar: #fef7f7;
+  --sidebar-foreground: #2d1b1b;
+  --sidebar-primary: #e91e63;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fce4ec;
+  --sidebar-accent-foreground: #2d1b1b;
+  --sidebar-border: rgba(233, 30, 99, 0.1);
+  --sidebar-ring: #e91e63;
+}
+
+.dark {
+  --background: #1a0d0d;
+  --foreground: #fce4ec;
+  --card: #2d1b1b;
+  --card-foreground: #fce4ec;
+  --popover: #2d1b1b;
+  --popover-foreground: #fce4ec;
+  --primary: #f8bbd9;
+  --primary-foreground: #1a0d0d;
+  --secondary: #4a2c2c;
+  --secondary-foreground: #fce4ec;
+  --muted: #4a2c2c;
+  --muted-foreground: #b39999;
+  --accent: #4a2c2c;
+  --accent-foreground: #fce4ec;
+  --destructive: #f44336;
+  --destructive-foreground: #fce4ec;
+  --border: rgba(248, 187, 217, 0.2);
+  --input: #4a2c2c;
+  --ring: #f8bbd9;
+  --sidebar: #1a0d0d;
+  --sidebar-foreground: #fce4ec;
+  --sidebar-primary: #f8bbd9;
+  --sidebar-primary-foreground: #1a0d0d;
+  --sidebar-accent: #4a2c2c;
+  --sidebar-accent-foreground: #fce4ec;
+  --sidebar-border: rgba(248, 187, 217, 0.2);
+  --sidebar-ring: #f8bbd9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-primary-pastel: var(--primary-pastel);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    input {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Utilidades personalizadas para la paleta rosada */
+@layer utilities {
+  .text-primary-light {
+    color: var(--primary-light);
+  }
+  
+  .text-primary-pastel {
+    color: var(--primary-pastel);
+  }
+  
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+  
+  .bg-primary-pastel {
+    background-color: var(--primary-pastel);
+  }
+  
+  .border-primary-light {
+    border-color: var(--primary-light);
+  }
+}
