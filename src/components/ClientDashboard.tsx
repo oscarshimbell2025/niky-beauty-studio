@@ -7,12 +7,14 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { User, Bell, LogOut, Calendar, Heart, Clock, Star, CreditCard, MapPin, Phone, Mail, X, Edit } from 'lucide-react';
 import { CommentsSection } from './CommentsSection';
 import { NotificationCenter } from './NotificationCenter';
-import nbsLogo from 'figma:asset/69e1becade91f357255960f8b8328510f71655ad.png';
 import type { AppUser, Service, Appointment, Notification } from '../types';
+
+// 👇 Reemplazo del logo
+const nbsLogo = "/assets/logo2.png";
+
 
 interface ClientDashboardProps {
   user: AppUser;
