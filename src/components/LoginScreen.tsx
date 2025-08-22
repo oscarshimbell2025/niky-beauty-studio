@@ -5,7 +5,6 @@ import { Label } from './ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
 
-// 🔥 Corrección: eliminamos figma:asset y usamos ruta válida
 const nbsLogo = '/assets/logo2.png';
 
 interface LoginScreenProps {
@@ -20,9 +19,9 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !password) return;
-    
+
     setIsLoading(true);
-    
+
     setTimeout(() => {
       onLogin(email, password);
       setIsLoading(false);
@@ -66,9 +65,9 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
         {/* Logo y título */}
         <div className="text-center space-y-4">
           <div className="mx-auto w-32 h-32 bg-white rounded-3xl flex items-center justify-center shadow-xl p-4">
-            <img 
-              src={nbsLogo} 
-              alt="Niky Beauty Studio" 
+            <img
+              src={nbsLogo}
+              alt="Niky Beauty Studio"
               className="w-full h-full object-contain"
             />
           </div>
