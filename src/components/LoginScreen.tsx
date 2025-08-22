@@ -21,7 +21,6 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
     if (!email || !password) return;
 
     setIsLoading(true);
-
     setTimeout(() => {
       onLogin(email, password);
       setIsLoading(false);
@@ -77,7 +76,71 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
           </div>
         </div>
 
-        {/* ... resto del código igual */}
+        {/* Card del login */}
+        <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle>Iniciar Sesión</CardTitle>
+            <CardDescription>Accede con tu cuenta o usa accesos rápidos</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">Correo electrónico</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tucorreo@ejemplo.com"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="password">Contraseña</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="********"
+                  required
+                />
+              </div>
+
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? 'Ingresando...' : 'Ingresar'}
+              </Button>
+            </form>
+
+            <Separator className="my-4" />
+
+            {/* Botones sociales */}
+            <div className="space-y-2">
+              <Button variant="outline" className="w-full" onClick={handleGoogleLogin} disabled={isLoading}>
+                {isLoading ? 'Cargando...' : 'Continuar con Google'}
+              </Button>
+              <Button variant="outline" className="w-full" onClick={handleAppleLogin} disabled={isLoading}>
+                {isLoading ? 'Cargando...' : 'Continuar con Apple'}
+              </Button>
+            </div>
+
+            <Separator className="my-4" />
+
+            {/* Accesos rápidos */}
+            <div className="grid grid-cols-3 gap-2">
+              <Button variant="secondary" onClick={fillAdminCredentials}>
+                Admin
+              </Button>
+              <Button variant="secondary" onClick={fillWorkerCredentials}>
+                Worker
+              </Button>
+              <Button variant="secondary" onClick={fillClientCredentials}>
+                Client
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
