@@ -5,7 +5,6 @@ import { Label } from './ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
 
-// 🔥 Corrección: eliminamos figma:asset y usamos ruta válida
 const nbsLogo = '/assets/logo2.png';
 
 interface LoginScreenProps {
