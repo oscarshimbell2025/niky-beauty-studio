@@ -5,6 +5,7 @@ import { Label } from './ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
 
+// Ruta del logo que está en la carpeta "public/assets"
 const nbsLogo = '/assets/logo2.png';
 
 interface LoginScreenProps {
@@ -145,3 +146,4 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
     </div>
   );
 }
+

@@ -244,7 +244,7 @@ export function ClientDashboard({
                 <div className="flex items-start space-x-4">
                   {service.imageUrl && (
                     <div className="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden">
-                      <ImageWithFallback
+                      <img
                         src={service.imageUrl}
                         alt={service.name}
                         className="w-full h-full object-cover"
@@ -288,7 +288,7 @@ export function ClientDashboard({
                         <div className="space-y-4">
                           {service.imageUrl && (
                             <div className="w-full h-32 rounded-lg overflow-hidden">
-                              <ImageWithFallback
+                              <img
                                 src={service.imageUrl}
                                 alt={service.name}
                                 className="w-full h-full object-cover"
