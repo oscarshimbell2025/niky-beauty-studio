@@ -17,7 +17,7 @@ function App() {
     services,
     workers,
     isLoading,
-    
+
     // Handlers
     handleLogin,
     handleLogout,
@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       {currentUser.role === 'admin' ? (
-        <AdminDashboard 
+        <AdminDashboard
           user={currentUser}
           services={services}
           appointments={appointments}
@@ -82,9 +82,9 @@ function App() {
           onApproveReschedule={handleApproveReschedule}
         />
       ) : currentUser.role === 'worker' ? (
-        <WorkerDashboard 
+        <WorkerDashboard
           user={currentUser}
-          appointments={appointments.filter(apt => 
+          appointments={appointments.filter(apt =>
             apt.isPublished && (apt.status === 'pending' || apt.assignedWorkerId === currentUser.id)
           )}
           notifications={userNotifications}
@@ -96,7 +96,7 @@ function App() {
           onRequestAppointment={handleRequestAppointment}
         />
       ) : (
-        <ClientDashboard 
+        <ClientDashboard
           user={currentUser}
           services={services.filter(s => s.isActive)}
           appointments={appointments.filter(apt => apt.clientId === currentUser.id)}
